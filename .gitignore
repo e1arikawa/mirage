@@ -13,3 +13,4 @@ out
 .project
 .gradletasknamecache
 gradle-app.setting
+.envrc

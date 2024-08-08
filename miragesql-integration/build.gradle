@@ -1,34 +1,61 @@
-uploadArchives.repositories.mavenDeployer {
-    pom.project {
-        name 'Mirage-SQL Integration'
-        description 'Mirage-SQL Integration is an easy way to integrate Mirage-SQL with Spring, Guice or Seasar2'
+publishing {
+    publications {
+        miragesqlIntegration(MavenPublication) {
+            from components.java
+            artifact tasks.sourcesJar
+            artifact tasks.javadocJar
+        }
     }
 }
 
 dependencies {
-    compile rootProject
-    compile project(":miragesql-test")
+    implementation rootProject
+    testImplementation project(":miragesql-test")
 
-    compile 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
 
-    compile 'commons-dbcp:commons-dbcp:1.4', optional
-    compile 'com.zaxxer:HikariCP:2.7.2', optional
+    implementation('commons-dbcp:commons-dbcp:1.4') {
+        capabilities {
+            requireCapability 'commons-dbcp:commons-dbcp:1.4'
+        }
+    }
 
-    compile "org.springframework:spring-core:5.3.10", optional
-    compile "org.springframework:spring-context:5.3.10", optional
-    compile "org.springframework:spring-jdbc:5.3.10", optional
+    implementation('com.zaxxer:HikariCP:5.1.0') {
+        capabilities {
+            requireCapability 'com.zaxxer:HikariCP:5.1.0'
+        }
+    }
 
-    compile "com.google.inject:guice:5.0.1", optional
+    implementation("org.springframework:spring-core:6.1.11") {
+        capabilities {
+            requireCapability 'org.springframework:spring-core:6.1.11'
+        }
+    }
+    implementation("org.springframework:spring-context:6.1.11") {
+        capabilities {
+            requireCapability 'org.springframework:spring-context:6.1.11'
+        }
+    }
+    implementation("org.springframework:spring-jdbc:6.1.11") {
+        capabilities {
+            requireCapability 'org.springframework:spring-jdbc:6.1.11'
+        }
+    }
 
+    implementation("com.google.inject:guice:7.0.0") {
+        capabilities {
+            requireCapability 'com.google.inject:guice:7.0.0'
+        }
+    }
 
     compileOnly 'org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1'
-    compileOnly 'javax.servlet:servlet-api:2.5'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:4.0.4'
 
-    compile 'junit:junit:4.12'
-    testImplementation 'cglib:cglib:3.2.5'
-    testImplementation 'org.mockito:mockito-core:2.13.0'
-    testImplementation 'com.h2database:h2:1.4.196'
-    testImplementation 'org.hsqldb:hsqldb:2.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'cglib:cglib:3.3.0'
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+    testImplementation 'com.h2database:h2:2.3.230'
+    testImplementation 'org.hsqldb:hsqldb:2.7.3'
 
-    testImplementation 'org.springframework:spring-aop:5.3.10'
+    testImplementation 'org.springframework:spring-aop:6.1.11'
 }
