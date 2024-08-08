@@ -10,12 +10,12 @@ You can get **`Mirage-SQL`** from the Maven Central repository. Add the followin
 <dependency>
     <groupId>com.miragesql</groupId>
     <artifactId>miragesql</artifactId>
-    <version>2.1.2</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 or in a Gradle based project add to your ```build.gradle``` the following line:
 ```groovy
-compile 'com.miragesql:miragesql:2.1.2'
+compile 'com.miragesql:miragesql:3.0.0'
 ```
 
 or just download it from the [Release Page](https://github.com/mirage-sql/mirage/releases).
@@ -25,9 +25,9 @@ Other **`Mirage-SQL`** Modules:
 
 Module|Description|Gradle
 ---   |---        |---
-**Mirage-SQL Test**|The testing functionality.| `testCompile 'com.miragesql:miragesql-test:2.1.2'`
-**Mirage-SQL Tools**|The development tools.| `testCompile 'com.miragesql:miragesql-tools:2.1.2'`
-**Mirage-SQL Integration** |The integration with [Spring](https://projects.spring.io/spring-framework/), [Guice](https://github.com/google/guice) and [Seasar2](http://www.seasar.org/en/)..|`compile 'com.miragesql:miragesql-integration:2.1.2'`
+**Mirage-SQL Test**|The testing functionality.| `testCompile 'com.miragesql:miragesql-test:3.0.0'`
+**Mirage-SQL Tools**|The development tools.| `testCompile 'com.miragesql:miragesql-tools:3.0.0'`
+**Mirage-SQL Integration** |The integration with [Spring](https://projects.spring.io/spring-framework/), [Guice](https://github.com/google/guice) and [Seasar2](http://www.seasar.org/en/)..|`compile 'com.miragesql:miragesql-integration:3.0.0'`
 
 
 If you are updating your application from a previous **`Mirage-SQL`** version, see the [Migration Guide](https://github.com/mirage-sql/mirage/wiki/Migration-Guide).
